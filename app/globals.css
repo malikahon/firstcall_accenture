@@ -358,3 +358,118 @@
   margin: 0;
   width: 90%;
 }
+
+.container {
+  width: 415px;
+  height: 812px;
+  padding: 32px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  overflow-y: auto; /* ✅ Enables scrolling if content overflows */
+  scroll-behavior: smooth;
+}
+
+.disaster-card {
+  width: 175px;
+  height: 85px; /* slightly smaller */
+  margin-bottom: 50px; /* reduced from 70px */
+}
+
+.results-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: inherit;
+  padding: 1rem;
+}
+
+.results-box {
+  background-color: white;           /* only this box is white */
+  width: 78vw;
+  max-height: 78vh;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.75;
+}
+
+
+.results-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.results-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.75rem;
+}
+
+.results-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.results-text {
+  font-size: 1rem;
+  color: #374151;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.results-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.results-restart {
+  display: inline-block;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.results-restart:hover {
+  background-color: #1f1f1f;
+}
+
+
+
+.results-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  font-family: system-ui, sans-serif;
+}
+
+.results-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.results-card {
+  background: #fefefe;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  white-space: pre-wrap;
+}
+
+.results-line {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}

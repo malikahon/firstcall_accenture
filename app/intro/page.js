@@ -7,11 +7,8 @@ const ThisFunc=() => {
         console.log("printed");
         // prompt("Printed");
     }
-
-
-
     return(
-        <div class="AppContainer">
+        <div className="AppContainer">
     
             {/* /* /* // INTRO PAGE */
 
@@ -54,32 +51,32 @@ const ThisFunc=() => {
  
              {/* /* // HOME PAGE  */}
 
-              <div class="container">
-                  <div class="logo">
+              <div className="container">
+                  <div className="logo">
                       <img src="/MainIcon.png" alt="Bear Logo"/>
                       <h1>Welcome</h1>
                   </div>
-                  <div class="disasters">
-                      <div class="disaster-card wildfire">
-                          <img class="icon" src="/FireIcon.png" alt="Wildfire"/>
+                  <div className="disasters">
+                      <div className="disaster-card wildfire">
+                          <img className="icon" src="/FireIcon.png" alt="Wildfire"/>
                           <p>WILDFIRE</p>
                       </div>
-                      <div class="disaster-card flood">
-                          <img class="icon" src="/FloodIcon.png" alt="Flood"/>
+                      <div className="disaster-card flood">
+                          <img className="icon" src="/FloodIcon.png" alt="Flood"/>
                           <p>FLOOD</p>
                       </div>
-                      <div class="disaster-card storm">
+                      <div className="disaster-card storm">
                           <img class="icon" src="/StormIcon.png" alt="Storm"/>
                           <p>STORM</p>
                       </div>
-                      <div class="disaster-card earthquake">
-                          <img class="icon" src="/EarthquakeIcon.png" alt="Earthquake"/>
+                      <div className="disaster-card earthquake">
+                          <img className="icon" src="/EarthquakeIcon.png" alt="Earthquake"/>
                   <p>EARTHQUAKE</p>
                       </div>
                   </div>
-                  <div class="nav-buttons">
-                      <button class="nav-btn">PREPARATION</button>
-                      <button class="nav-btn">RESCUE MAP</button>
+                  <div className="nav-buttons">
+                      <button className="nav-btn">PREPARATION</button>
+                      <button className="nav-btn">RESCUE MAP</button>
                   </div>
              </div> 
 
@@ -104,5 +101,4 @@ const ThisFunc=() => {
 
 
 }
-
 export default ThisFunc
