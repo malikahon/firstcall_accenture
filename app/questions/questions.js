@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { getFallbackPlan } from "../utils/fallbackPlan"; 
+import { getFallbackPlan } from "../utils/fallbackPlan";
 
 const questions = [
   { name: "1. What type of home do you live in?", answers: ["House", "Low-rise apartment", "High-rise apartment", "Mobile home"] },
@@ -17,12 +17,22 @@ const questions = [
   { name: "11. Do you have a go-bag or kit ready?", answers: ["Fully packed", "Partially packed", "Plan to prepare", "None"] },
 ];
 
-export default function Questionnaire() {
+export default function Questionnaire({ onFinalStepChange }) {
   const [index, setIndex] = useState(0);
   const [responses, setResponses] = useState([]);
   const [finalStep, setFinalStep] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
+  // Notify parent on first mount that we're not in final step
+  useEffect(() => {
+    onFinalStepChange?.(false);
+  }, []);
+
+  // Notify parent whenever finalStep state changes
+  useEffect(() => {
+    onFinalStepChange?.(finalStep);
+  }, [finalStep]);
 
   const handleAnswer = (answer) => {
     const next = index + 1;
@@ -43,7 +53,7 @@ export default function Questionnaire() {
 
     try {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 2000); // 2 sec timeout
+      const timeout = setTimeout(() => controller.abort(), 2000);
 
       const res = await fetch("/api/generate-plan", {
         method: "POST",
@@ -109,7 +119,7 @@ export default function Questionnaire() {
           </button>
         </div>
 
-        {loading && <p>⏳ Generating your emergency plan... ⏳</p>}
+        {loading && <p>Generating your emergency plan...</p>}
       </div>
     );
   }

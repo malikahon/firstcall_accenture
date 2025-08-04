@@ -25,11 +25,6 @@ export default function ResultsPage() {
     <div className="results-wrapper">
       <div className="results-box">
         <div className="results-header">
-          <img
-            src={getIcon(plan)}
-            alt="Disaster Icon"
-            className="results-icon"
-          />
           <h1 className="results-title">Your Emergency Plan</h1>
         </div>
 
